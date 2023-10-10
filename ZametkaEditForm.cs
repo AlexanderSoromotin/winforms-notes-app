@@ -27,12 +27,33 @@ namespace Zametki_Bal_Kuz
         {
             InitializeComponent();
 
-            
-
             originalTitle = title;
             originalText = text;
             originalDate = date;
             noteId = id;
+
+            // Получение данных заметки
+            var addQuery = $"SELECT * FROM note WHERE id_note = {noteId}";
+            var command = new MySqlCommand(addQuery, DB.getConnection());
+
+            // Создайте адаптер данных и таблицу для хранения результатов
+            var adapter = new MySqlDataAdapter(command);
+            var dataTable = new DataTable();
+
+            // Заполните таблицу данными из базы данных
+            adapter.Fill(dataTable);
+
+            // Извлеките значение "is_completed" из первой строки (предполагая, что у вас только одна запись)
+            bool isCompleted = Convert.ToBoolean(dataTable.Rows[0]["is_completed"]);
+
+            // Проверяем статус задачи
+            if (isCompleted) {
+                // Прячем кнопку "Завершить"
+                button_markCompletedNote.Hide();
+            } else {
+                // Прячем кнопку "Отметить незавершённой"
+                button_markIncompleteNote.Hide();
+            }
 
             txtTitle.Text = title; // Отобразить заголовок на форме
             richTextBox1.Text = text; // Отобразить текст заметки на форме
@@ -156,9 +177,32 @@ namespace Zametki_Bal_Kuz
             }
         }
 
-        private void button_completeNote_Click(object sender, EventArgs e)
-        {
+        private void button_markCompletedNote_Click(object sender, EventArgs e) {
+            // Пометка задачи как "Завершённая"
+            // Ваш код для сохранения изменений в заметке в базе данных
+            var addQuery = $"update note set is_completed = 1 where id_note = {noteId}";
 
+            var command = new MySqlCommand(addQuery, DB.getConnection());
+            command.ExecuteNonQuery();
+
+            button_markCompletedNote.Hide();
+            button_markIncompleteNote.Show();
+
+            MessageBox.Show("Задача завершена");
+            Hide();
         }
+
+        private void button_markIncompleteNote_Click(object sender, EventArgs e) {
+            // Пометка задачи как "Незавершённая"
+            var addQuery = $"update note set is_completed = 0 where id_note = {noteId}";
+
+            var command = new MySqlCommand(addQuery, DB.getConnection());
+            command.ExecuteNonQuery();
+
+            button_markCompletedNote.Show();
+            button_markIncompleteNote.Hide();
+        }
+
+        
     }
 }

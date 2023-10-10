@@ -42,22 +42,22 @@ namespace Zametki_Bal_Kuz
             dataGridView1.Columns.Add("dateInSystem", "Дата");
             dataGridView1.Columns.Add("title", "Заголовок");
             dataGridView1.Columns.Add("text", "Текст");
+            dataGridView1.Columns.Add("status", "Статус");
             //dataGridView1.Columns.Add("id_user", "Логин пользователя");
             //dataGridView1.Columns.Add("IsNew", String.Empty);
         }
 
         private void ReadSingleRows(DataGridView dgw, IDataRecord record)
         {
-            //int idUser = record.IsDBNull(4) ? 0 : record.GetInt32(4);
-            //string isNew = record.IsDBNull(5) ? "" : "ModifiedNew";
+            string status = (record.GetString(4) == "1") ? "Завершена" : "Не завершена";
 
-            dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetString(2), record.GetString(3), RowState.ModifiedNew);
+            dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetString(2), record.GetString(3), status, RowState.ModifiedNew);
         }
         private void RefreshDataGrid(DataGridView dgw) //выводит данные из бд в датагрид
         {
             dgw.Rows.Clear();
 
-            string queryString = $"select id_note, dateInSystem, title, text from note";
+            string queryString = $"select id_note, dateInSystem, title, text, is_completed from note";
 
             MySqlCommand command = new MySqlCommand(queryString, DB.getConnection());
 
@@ -167,6 +167,11 @@ namespace Zametki_Bal_Kuz
                     dataGridView1.Rows[e.RowIndex].Cells["dateInSystem"].Value = updatedDate;
                 }
             }
+        }
+
+        private void refreshListButton_Click(object sender, EventArgs e) {
+            // Обновление списка заметок
+            RefreshDataGrid(dataGridView1);
         }
     }
 }
