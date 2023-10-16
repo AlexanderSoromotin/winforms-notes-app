@@ -95,9 +95,10 @@
             this.ClientSize = new System.Drawing.Size(646, 574);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dataGridView1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "listOfEvents";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "listOfEvents";
+            this.Text = "Заметки";
             this.Load += new System.EventHandler(this.listOfEvents_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);

@@ -47,8 +47,8 @@ namespace Zametki_Bal_Kuz
         private void pictureBox_Back_Click(object sender, EventArgs e)
         {
             this.Hide();
-            spisok spisok = new spisok();
-            spisok.Show();
+            @event eventForm = new @event();
+            eventForm.Show();
         }
     }
 }
