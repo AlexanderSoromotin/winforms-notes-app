@@ -46,3 +46,30 @@ C:\Users\sanne\OneDrive\Desktop\Zametki_Bal_Kuz\obj\Debug\Zametki_Bal_Kuz.Zametk
 C:\Users\sanne\OneDrive\Desktop\Zametki_Bal_Kuz\obj\Debug\Notes.csproj.GenerateResource.cache
 C:\Users\sanne\OneDrive\Desktop\Zametki_Bal_Kuz\obj\Debug\Notes.csproj.CoreCompileInputs.cache
 C:\Users\sanne\OneDrive\Desktop\Zametki_Bal_Kuz\obj\Debug\Notes.csproj.CopyComplete
+C:\Users\Windows 10 Pro\Documents\notes\bin\Debug\Zametki_Bal_Kuz.exe.config
+C:\Users\Windows 10 Pro\Documents\notes\bin\Debug\Zametki_Bal_Kuz.exe
+C:\Users\Windows 10 Pro\Documents\notes\bin\Debug\Zametki_Bal_Kuz.pdb
+C:\Users\Windows 10 Pro\Documents\notes\bin\Debug\MySql.Data.dll
+C:\Users\Windows 10 Pro\Documents\notes\bin\Debug\Google.Protobuf.dll
+C:\Users\Windows 10 Pro\Documents\notes\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Windows 10 Pro\Documents\notes\bin\Debug\System.Memory.dll
+C:\Users\Windows 10 Pro\Documents\notes\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Windows 10 Pro\Documents\notes\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Windows 10 Pro\Documents\notes\bin\Debug\System.Buffers.dll
+C:\Users\Windows 10 Pro\Documents\notes\bin\Debug\MySql.Data.xml
+C:\Users\Windows 10 Pro\Documents\notes\obj\Debug\Notes.csproj.AssemblyReference.cache
+C:\Users\Windows 10 Pro\Documents\notes\obj\Debug\Notes.csproj.SuggestedBindingRedirects.cache
+C:\Users\Windows 10 Pro\Documents\notes\obj\Debug\Zametki_Bal_Kuz.exe.config
+C:\Users\Windows 10 Pro\Documents\notes\obj\Debug\Zametki_Bal_Kuz.loginForm.resources
+C:\Users\Windows 10 Pro\Documents\notes\obj\Debug\Zametki_Bal_Kuz.Properties.Resources.resources
+C:\Users\Windows 10 Pro\Documents\notes\obj\Debug\Zametki_Bal_Kuz.spisok.resources
+C:\Users\Windows 10 Pro\Documents\notes\obj\Debug\Zametki_Bal_Kuz.zametka.resources
+C:\Users\Windows 10 Pro\Documents\notes\obj\Debug\Zametki_Bal_Kuz.ZametkaEditForm.resources
+C:\Users\Windows 10 Pro\Documents\notes\obj\Debug\Notes.csproj.GenerateResource.cache
+C:\Users\Windows 10 Pro\Documents\notes\obj\Debug\Notes.csproj.CoreCompileInputs.cache
+C:\Users\Windows 10 Pro\Documents\notes\obj\Debug\Notes.csproj.CopyComplete
+C:\Users\Windows 10 Pro\Documents\notes\obj\Debug\Zametki_Bal_Kuz.exe
+C:\Users\Windows 10 Pro\Documents\notes\obj\Debug\Zametki_Bal_Kuz.pdb
+C:\Users\Windows 10 Pro\Documents\notes\obj\Debug\Zametki_Bal_Kuz.event.resources
+C:\Users\Windows 10 Pro\Documents\notes\obj\Debug\Zametki_Bal_Kuz.listOfEvents.resources
+C:\Users\Windows 10 Pro\Documents\notes\obj\Debug\Zametki_Bal_Kuz.money.resources

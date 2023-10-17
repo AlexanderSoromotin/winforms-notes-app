@@ -28,6 +28,9 @@ namespace Zametki_Bal_Kuz
 
         private bool isSearchTextDisplayed = true;
         private string searchText = "Поиск...";
+
+        // Свойство для передачи выбранной даты
+        
         public spisok()
         {
             InitializeComponent();
@@ -36,6 +39,7 @@ namespace Zametki_Bal_Kuz
             textBoxSearch.ForeColor = System.Drawing.Color.Gray;
             textBoxSearch.Text = searchText;
         }
+        
         private void CreateColumns() 
         {
             dataGridView1.Columns.Add("id_note", "Код заметки");
@@ -172,6 +176,44 @@ namespace Zametki_Bal_Kuz
         private void refreshListButton_Click(object sender, EventArgs e) {
             // Обновление списка заметок
             RefreshDataGrid(dataGridView1);
+        }
+
+        private void pictureBox_event_Click(object sender, EventArgs e)
+        {
+            @event @eventForm = new @event();
+            @eventForm.Show();
+            Hide();
+        }
+
+        private void pictureBox_money_Click(object sender, EventArgs e)
+        {
+            money moneyForm = new money();
+            moneyForm.Show();
+            Hide();
+        }
+
+        private void pictureBox_event_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(this.pictureBox_event, "События");
+        }
+
+        private void pictureBox2_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(this.pictureBox2, "Новая заметка");
+        }
+
+        private void pictureBox_money_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(this.pictureBox_money, "Финансы");
+        }
+
+        private void refreshListButton_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(this.refreshListButton, "Обновить");
         }
     }
 }
