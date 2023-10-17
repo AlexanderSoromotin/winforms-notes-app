@@ -88,9 +88,10 @@
             this.ClientSize = new System.Drawing.Size(373, 350);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.monthCalendar1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "@event";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "event";
+            this.Text = "Заметки";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Back)).EndInit();

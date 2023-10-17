@@ -94,9 +94,6 @@ namespace Zametki_Bal_Kuz
                 isTxtMessageDisplayed = true;
             }
         }
-
-
-
         private void button_save_Click(object sender, EventArgs e)
         {
             DB.openConnection();

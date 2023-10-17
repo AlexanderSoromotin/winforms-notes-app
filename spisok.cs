@@ -184,5 +184,36 @@ namespace Zametki_Bal_Kuz
             @eventForm.Show();
             Hide();
         }
+
+        private void pictureBox_money_Click(object sender, EventArgs e)
+        {
+            money moneyForm = new money();
+            moneyForm.Show();
+            Hide();
+        }
+
+        private void pictureBox_event_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(this.pictureBox_event, "События");
+        }
+
+        private void pictureBox2_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(this.pictureBox2, "Новая заметка");
+        }
+
+        private void pictureBox_money_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(this.pictureBox_money, "Финансы");
+        }
+
+        private void refreshListButton_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(this.refreshListButton, "Обновить");
+        }
     }
 }

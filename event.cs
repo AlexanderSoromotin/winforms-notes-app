@@ -68,6 +68,7 @@ namespace Zametki_Bal_Kuz
 
             // Откройте форму spisok
             listForm.Show();
+            this.Close();
         }
 
         private void pictureBox_Back_Click(object sender, EventArgs e)
