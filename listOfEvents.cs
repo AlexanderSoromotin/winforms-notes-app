@@ -26,13 +26,33 @@ namespace Zametki_Bal_Kuz
         {
             // Здесь вы должны выполнить запрос к базе данных,
             // чтобы получить задачи для выбранной даты
-            string query = "SELECT title, text, is_completed FROM note WHERE dateInSystem = @selectedDate";
+            string query = "SELECT title as `Заголовок`, text as `Текст`, is_completed as `Статус` FROM note WHERE dateInSystem = @selectedDate";
             MySqlCommand command = new MySqlCommand(query, DB.getConnection());
             command.Parameters.Add("@selectedDate", MySqlDbType.Date).Value = SelectedDate;
 
             MySqlDataAdapter adapter = new MySqlDataAdapter(command);
             DataTable dataTable = new DataTable();
+
+            dataTable.Columns.Add("Статус", typeof(string));
+
+            // Заполните dataTable
             adapter.Fill(dataTable);
+
+            // Пройдитесь по записям и измените столбец
+            foreach (DataRow row in dataTable.Rows)
+            {
+                if (Convert.ToInt32(row["Статус"]) == 1)
+                {
+                    row["Статус"] = "Завершено";
+                }
+                else
+                {
+                    row["Статус"] = "Не завершено";
+                }
+            }
+
+            // Удалите столбец int
+            // dataTable.Columns.Remove("is_completed");
 
             // Отобразите результаты запроса в DataGridView
             dataGridView1.DataSource = dataTable;

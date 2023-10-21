@@ -73,3 +73,4 @@ C:\Users\Windows 10 Pro\Documents\notes\obj\Debug\Zametki_Bal_Kuz.pdb
 C:\Users\Windows 10 Pro\Documents\notes\obj\Debug\Zametki_Bal_Kuz.event.resources
 C:\Users\Windows 10 Pro\Documents\notes\obj\Debug\Zametki_Bal_Kuz.listOfEvents.resources
 C:\Users\Windows 10 Pro\Documents\notes\obj\Debug\Zametki_Bal_Kuz.money.resources
+C:\Users\Windows 10 Pro\Documents\notes\obj\Debug\Zametki_Bal_Kuz.recurringTransactions.resources

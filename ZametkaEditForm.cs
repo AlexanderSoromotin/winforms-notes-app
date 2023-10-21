@@ -28,7 +28,7 @@ namespace Zametki_Bal_Kuz
             InitializeComponent();
 
             originalTitle = title;
-            originalText = text;
+            // originalText = text;
             originalDate = date;
             noteId = id;
 
@@ -45,6 +45,7 @@ namespace Zametki_Bal_Kuz
 
             // Извлеките значение "is_completed" из первой строки (предполагая, что у вас только одна запись)
             bool isCompleted = Convert.ToBoolean(dataTable.Rows[0]["is_completed"]);
+            text = dataTable.Rows[0]["text"].ToString();
 
             // Проверяем статус задачи
             if (isCompleted) {
