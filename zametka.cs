@@ -137,6 +137,7 @@ namespace Zametki_Bal_Kuz
                 richTextBox1.SelectionFont = newFont;
             }
         }
+        
         private void pictureBox_italic_Click(object sender, EventArgs e) //курсив
         {
             if (richTextBox1.SelectionFont != null)

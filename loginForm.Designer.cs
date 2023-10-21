@@ -113,7 +113,7 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.txtPassword);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(107, 95);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(506, 456);
             this.panel1.TabIndex = 6;
@@ -123,7 +123,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(78)))), ((int)(((byte)(60)))));
-            this.ClientSize = new System.Drawing.Size(722, 677);
+            this.ClientSize = new System.Drawing.Size(529, 480);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

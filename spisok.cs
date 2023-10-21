@@ -74,6 +74,14 @@ namespace Zametki_Bal_Kuz
                 ReadSingleRows(dgw, reader);
             }
             reader.Close();
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (!row.IsNewRow)
+                {
+                    //row.Cells[3].Value = ConvertToPlainText(row.Cells[3].Value.ToString());
+                }
+            }
         }
 
         private void spisok_Load(object sender, EventArgs e)
