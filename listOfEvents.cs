@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using static System.Net.Mime.MediaTypeNames;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Zametki_Bal_Kuz
@@ -21,12 +22,21 @@ namespace Zametki_Bal_Kuz
         {
             InitializeComponent();
         }
+        public static string GetPlainTextFromRtf(string rtf) {
+            using (RichTextBox richTextBox = new RichTextBox()) {
+                richTextBox.Rtf = rtf;
+                return richTextBox.Text;
+            }
+        }
 
         private void LoadTasksForSelectedDate()
         {
             // Здесь вы должны выполнить запрос к базе данных,
             // чтобы получить задачи для выбранной даты
-            string query = "SELECT title as `Заголовок`, text as `Текст`, is_completed as `Статус` FROM note WHERE dateInSystem = @selectedDate";
+            string query = "SELECT title as `Заголовок`, text as `Текст`, " +
+                            "CASE WHEN is_event = 1 THEN 'Событие' ELSE 'Заметка' END as `Тип`, " +
+                            $"is_completed as `Статус` FROM note WHERE id_user = {AppData.user_id} and dateInSystem = @selectedDate";
+
             MySqlCommand command = new MySqlCommand(query, DB.getConnection());
             command.Parameters.Add("@selectedDate", MySqlDbType.Date).Value = SelectedDate;
 
@@ -49,6 +59,11 @@ namespace Zametki_Bal_Kuz
                 {
                     row["Статус"] = "Не завершено";
                 }
+                
+                string text = row["Текст"].ToString();
+                byte[] rtfBytes = Convert.FromBase64String(text);
+                string rtfText = Encoding.UTF8.GetString(rtfBytes);
+                row["Текст"] = GetPlainTextFromRtf(rtfText);
             }
 
             // Удалите столбец int
@@ -56,6 +71,7 @@ namespace Zametki_Bal_Kuz
 
             // Отобразите результаты запроса в DataGridView
             dataGridView1.DataSource = dataTable;
+            dataGridView1.Columns[2].Width = 175;
         }
 
        

@@ -47,6 +47,10 @@ namespace Zametki_Bal_Kuz
             bool isCompleted = Convert.ToBoolean(dataTable.Rows[0]["is_completed"]);
             text = dataTable.Rows[0]["text"].ToString();
 
+            // Преобразование форматированного текста заметки в обычный
+            byte[] rtfBytes = Convert.FromBase64String(text);
+            string rtfText = Encoding.UTF8.GetString(rtfBytes);
+
             // Проверяем статус задачи
             if (isCompleted) {
                 // Прячем кнопку "Завершить"
@@ -57,7 +61,7 @@ namespace Zametki_Bal_Kuz
             }
 
             txtTitle.Text = title; // Отобразить заголовок на форме
-            richTextBox1.Text = text; // Отобразить текст заметки на форме
+            richTextBox1.Rtf = rtfText; // Отобразить текст заметки на форме
             dateTimePicker1.Value = date; // Установить выбранную дату в DateTimePicker
         }
         private void button_save_Click(object sender, EventArgs e)
@@ -66,11 +70,15 @@ namespace Zametki_Bal_Kuz
             if (isNoteModified)
             {
                 string newTitle = txtTitle.Text;
-                string newText = richTextBox1.Text;
+                string newText = richTextBox1.Rtf;
+
+                byte[] rtfBytes = Encoding.UTF8.GetBytes(newText); // Используйте соответствующую кодировку
+                string base64Rtf = Convert.ToBase64String(rtfBytes);
+
                 DateTime currentDate = DateTime.Today;
 
                 // Ваш код для сохранения изменений в заметке в базе данных
-                var addQuery = $"update note set dateInSystem = '{currentDate}', title = '{newTitle}', text = '{newText}' where id_note = {noteId}";
+                var addQuery = $"update note set dateInSystem = '{dateTimePicker1.Value.ToString("yyyy-MM-dd HH:mm:ss")}', title = '{newTitle}', text = '{base64Rtf}' where id_note = {noteId}";
 
                 var command = new MySqlCommand(addQuery, DB.getConnection());
                 command.ExecuteNonQuery();

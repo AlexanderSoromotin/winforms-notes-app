@@ -64,6 +64,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.isEventCheckBox = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_italic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bold)).BeginInit();
@@ -604,12 +605,24 @@
             this.richTextBox1.Enter += new System.EventHandler(this.richTextBox1_Enter);
             this.richTextBox1.Leave += new System.EventHandler(this.richTextBox1_Leave);
             // 
+            // isEventCheckBox
+            // 
+            this.isEventCheckBox.AutoSize = true;
+            this.isEventCheckBox.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.isEventCheckBox.Location = new System.Drawing.Point(25, 509);
+            this.isEventCheckBox.Name = "isEventCheckBox";
+            this.isEventCheckBox.Size = new System.Drawing.Size(200, 36);
+            this.isEventCheckBox.TabIndex = 14;
+            this.isEventCheckBox.Text = "Это событие";
+            this.isEventCheckBox.UseVisualStyleBackColor = true;
+            // 
             // zametka
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(100)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(843, 653);
+            this.Controls.Add(this.isEventCheckBox);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -631,6 +644,7 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -671,5 +685,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.CheckBox isEventCheckBox;
     }
 }

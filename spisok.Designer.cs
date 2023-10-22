@@ -40,6 +40,7 @@
             this.pictureBox_event = new System.Windows.Forms.PictureBox();
             this.refreshListButton = new System.Windows.Forms.PictureBox();
             this.pictureBox_money = new System.Windows.Forms.PictureBox();
+            this.userName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_delete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -69,7 +70,6 @@
             // pictureBox_delete
             // 
             this.pictureBox_delete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_delete.Enabled = false;
             this.pictureBox_delete.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_delete.Image")));
             this.pictureBox_delete.Location = new System.Drawing.Point(18, 250);
             this.pictureBox_delete.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -78,6 +78,8 @@
             this.pictureBox_delete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox_delete.TabIndex = 8;
             this.pictureBox_delete.TabStop = false;
+            this.pictureBox_delete.Click += new System.EventHandler(this.pictureBox_delete_Click);
+            this.pictureBox_delete.MouseHover += new System.EventHandler(this.pictureBox_delete_MouseHover);
             // 
             // pictureBox2
             // 
@@ -96,6 +98,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.userName);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.pictureBox_exit);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -187,6 +190,20 @@
             this.pictureBox_money.Click += new System.EventHandler(this.pictureBox_money_Click);
             this.pictureBox_money.MouseHover += new System.EventHandler(this.pictureBox_money_MouseHover);
             // 
+            // userName
+            // 
+            this.userName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.userName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.userName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.userName.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.userName.Location = new System.Drawing.Point(719, 6);
+            this.userName.Name = "userName";
+            this.userName.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.userName.Size = new System.Drawing.Size(225, 30);
+            this.userName.TabIndex = 15;
+            this.userName.Text = "Имя пользователя";
+            this.userName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // spisok
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -236,5 +253,6 @@
         private System.Windows.Forms.PictureBox pictureBox_event;
         private System.Windows.Forms.PictureBox refreshListButton;
         private System.Windows.Forms.PictureBox pictureBox_money;
+        private System.Windows.Forms.Label userName;
     }
 }
