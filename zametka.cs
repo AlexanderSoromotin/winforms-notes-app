@@ -102,14 +102,20 @@ namespace Zametki_Bal_Kuz
             dateTimePicker1.CustomFormat = "yyyy-MM-dd";
             var date = dateTimePicker1.Text;
             var title = txtTitle.Text;
-            var text = richTextBox1.Text;
+            var text = richTextBox1.Rtf;
+            int is_event = isEventCheckBox.Checked ? 1 : 0;
+
+
+            byte[] rtfBytes = Encoding.UTF8.GetBytes(text); // Используйте соответствующую кодировку
+            string base64Rtf = Convert.ToBase64String(rtfBytes);
 
             if (!string.IsNullOrWhiteSpace(richTextBox1.Text) && !string.IsNullOrWhiteSpace(dateTimePicker1.Text))
             {
-                var addQuery = $"insert into note (dateInSystem, title, text, id_user) values ('{date}', '{title}', '{text}', {AppData.user_id})";
+                var addQuery = $"insert into note (dateInSystem, title, text, id_user, is_event) values ('{date}', '{title}', @text, {AppData.user_id}, {is_event})";
 
-                var command = new MySqlCommand(addQuery, DB.getConnection());
-                command.ExecuteNonQuery();
+                MySqlCommand cmd = new MySqlCommand(addQuery, DB.getConnection());
+                cmd.Parameters.AddWithValue("@text", base64Rtf);
+                cmd.ExecuteNonQuery();
 
                 MessageBox.Show("Запись создана!", "Успех)", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }

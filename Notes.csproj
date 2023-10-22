@@ -84,6 +84,12 @@
     <Compile Include="recurringTransactions.Designer.cs">
       <DependentUpon>recurringTransactions.cs</DependentUpon>
     </Compile>
+    <Compile Include="RegistrationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistrationForm.Designer.cs">
+      <DependentUpon>RegistrationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="spisok.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,9 @@
     <EmbeddedResource Include="recurringTransactions.resx">
       <DependentUpon>recurringTransactions.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RegistrationForm.resx">
+      <DependentUpon>RegistrationForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="spisok.resx">
       <DependentUpon>spisok.cs</DependentUpon>
     </EmbeddedResource>
@@ -147,6 +156,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="userToken.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

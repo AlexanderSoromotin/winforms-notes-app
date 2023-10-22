@@ -34,8 +34,9 @@ namespace Zametki_Bal_Kuz
             // Перебираем записи из базы данных и выделяем даты в MonthCalendar
             foreach (DataRow row in notesTable.Rows)
             {
-               // MessageBox.Show("ошибка");             
+                            
                 DateTime date = Convert.ToDateTime(row["dateInSystem"]);
+                // MessageBox.Show(date.ToString()); 
                 monthCalendar1.AddBoldedDate(date);
             }
 
