@@ -283,7 +283,7 @@ namespace Zametki_Bal_Kuz
         {
             helpForm help = new helpForm();
             help.Show();
-            Hide();
+            // Hide();
         }
 
         private void pictureBox_help_MouseHover(object sender, EventArgs e)

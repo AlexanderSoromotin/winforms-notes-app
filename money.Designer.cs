@@ -777,6 +777,7 @@
             this.ClientSize = new System.Drawing.Size(861, 672);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.tabControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "money";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
