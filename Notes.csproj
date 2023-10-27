@@ -58,6 +58,12 @@
     <Compile Include="event.Designer.cs">
       <DependentUpon>event.cs</DependentUpon>
     </Compile>
+    <Compile Include="helpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="helpForm.Designer.cs">
+      <DependentUpon>helpForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="listOfEvents.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,20 +102,23 @@
     <Compile Include="spisok.Designer.cs">
       <DependentUpon>spisok.cs</DependentUpon>
     </Compile>
-    <Compile Include="zametka.cs">
+    <Compile Include="addNote.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="zametka.Designer.cs">
-      <DependentUpon>zametka.cs</DependentUpon>
+    <Compile Include="addNote.Designer.cs">
+      <DependentUpon>addNote.cs</DependentUpon>
     </Compile>
-    <Compile Include="ZametkaEditForm.cs">
+    <Compile Include="editNoteForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ZametkaEditForm.Designer.cs">
-      <DependentUpon>ZametkaEditForm.cs</DependentUpon>
+    <Compile Include="editNoteForm.Designer.cs">
+      <DependentUpon>editNoteForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="event.resx">
       <DependentUpon>event.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="helpForm.resx">
+      <DependentUpon>helpForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="listOfEvents.resx">
       <DependentUpon>listOfEvents.cs</DependentUpon>
@@ -138,11 +147,11 @@
     <EmbeddedResource Include="spisok.resx">
       <DependentUpon>spisok.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="zametka.resx">
-      <DependentUpon>zametka.cs</DependentUpon>
+    <EmbeddedResource Include="addNote.resx">
+      <DependentUpon>addNote.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ZametkaEditForm.resx">
-      <DependentUpon>ZametkaEditForm.cs</DependentUpon>
+    <EmbeddedResource Include="editNoteForm.resx">
+      <DependentUpon>editNoteForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -477,6 +477,25 @@ namespace Zametki_Bal_Kuz
             form.Show();
             this.Hide();
         }
+
+        private void deleteTransactionButton_Click(object sender, EventArgs e)
+        { // удаление транзакции
+
+            DB.openConnection();
+
+            if (dgwRecurringTransactions.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dgwRecurringTransactions.SelectedRows[0]; // Первая выбранная строка
+                var id = selectedRow.Cells[0].Value.ToString(); // Получение значения в ячейке "id"
+                var addQuery = $"delete from recurring_transactions where id = '{id}'"; // Вставляем значение в запрос
+                var command = new MySqlCommand(addQuery, DB.getConnection());
+                command.ExecuteNonQuery();
+
+                loadRecurringTransactions();
+            }
+
+            DB.closeConnection();
+        }
     }
 }
 // Записывать дату последнего платежа при создании платежа

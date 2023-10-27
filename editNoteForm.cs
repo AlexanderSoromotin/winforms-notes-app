@@ -13,7 +13,7 @@ using MySql.Data.MySqlClient;
 
 namespace Zametki_Bal_Kuz
 {
-    public partial class ZametkaEditForm : Form
+    public partial class editNoteForm : Form
     {
         DB DB = new DB();
         
@@ -23,7 +23,7 @@ namespace Zametki_Bal_Kuz
         private string originalText;
         private DateTime originalDate;
         private bool isNoteModified = false; // Флаг для отслеживания изменений в заметке
-        public ZametkaEditForm(string title, string text, DateTime date, int id)
+        public editNoteForm(string title, string text, DateTime date, int id)
         {
             InitializeComponent();
 

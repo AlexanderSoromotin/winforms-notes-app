@@ -127,7 +127,7 @@ namespace Zametki_Bal_Kuz
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            zametka zametkaForm = new zametka();
+            addNote zametkaForm = new addNote();
             zametkaForm.Show(); // Установите флаг, что это новая заметка
             Hide();
         }
@@ -189,7 +189,7 @@ namespace Zametki_Bal_Kuz
                 string text = row.Cells["text"].Value.ToString(); // Получить текст заметки из выбранной строки
                 DateTime date = Convert.ToDateTime(row.Cells["dateInSystem"].Value); // Получить дату из выбранной строки
 
-                ZametkaEditForm zametkaForm = new ZametkaEditForm(title, text, date, Convert.ToInt32(id)); // Создать экземпляр формы "zametka" и передать данные для редактирования
+                editNoteForm zametkaForm = new editNoteForm(title, text, date, Convert.ToInt32(id)); // Создать экземпляр формы "zametka" и передать данные для редактирования
                 DialogResult result = zametkaForm.ShowDialog(); // Показать форму "zametka" модально для редактирования
 
                 if (result == DialogResult.OK) // Проверить, если пользователь нажал "OK" на форме "zametka"
@@ -276,7 +276,26 @@ namespace Zametki_Bal_Kuz
 
         private void pictureBox_delete_MouseHover(object sender, EventArgs e) {
             ToolTip tt = new ToolTip();
-            tt.SetToolTip(this.pictureBox2, "Удалить заметку");
+            tt.SetToolTip(this.pictureBox_delete, "Удалить заметку");
+        }
+
+        private void pictureBox_help_Click(object sender, EventArgs e)
+        {
+            helpForm help = new helpForm();
+            help.Show();
+            Hide();
+        }
+
+        private void pictureBox_help_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(this.pictureBox_help, "Помощь");
+        }
+
+        private void pictureBox_exit_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(this.pictureBox_exit, "Выход");
         }
     }
 }

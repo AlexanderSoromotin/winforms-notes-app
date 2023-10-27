@@ -15,7 +15,7 @@ using MySql.Data.MySqlClient;
 
 namespace Zametki_Bal_Kuz
 {
-    public partial class zametka : Form
+    public partial class addNote : Form
     {
         DB DB = new DB();
 
@@ -28,7 +28,7 @@ namespace Zametki_Bal_Kuz
 
         private bool isTxtTitleDisplayed = true;
         private string TxtTitle = "Заголовок";
-        public zametka()
+        public addNote()
         {
             InitializeComponent();
             // Установите текст по умолчанию
@@ -214,7 +214,7 @@ namespace Zametki_Bal_Kuz
             a = float.Parse(textBox1.Text);
             textBox1.Clear();
             count = 1;
-            label3.Text = a.ToString() + "+";
+            label3.Text = a.ToString() + " +";
             znak = true;
         }
 
@@ -223,7 +223,7 @@ namespace Zametki_Bal_Kuz
             a = float.Parse(textBox1.Text);
             textBox1.Clear();
             count = 2;
-            label3.Text = a.ToString() + "-";
+            label3.Text = a.ToString() + " -";
             znak = true;
         }
 
@@ -232,7 +232,7 @@ namespace Zametki_Bal_Kuz
             a = float.Parse(textBox1.Text);
             textBox1.Clear();
             count = 3;
-            label3.Text = a.ToString() + "*";
+            label3.Text = a.ToString() + " *";
             znak = true;
         }
 
@@ -241,7 +241,7 @@ namespace Zametki_Bal_Kuz
             a = float.Parse(textBox1.Text);
             textBox1.Clear();
             count = 4;
-            label3.Text = a.ToString() + "/";
+            label3.Text = a.ToString() + " /";
             znak = true;
         }
         private void calculate()
@@ -302,6 +302,11 @@ namespace Zametki_Bal_Kuz
                 textBox1.Text = textBox1.Text.Replace("-", "");
                 znak = true;
             }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void button12_Click(object sender, EventArgs e) //проценты

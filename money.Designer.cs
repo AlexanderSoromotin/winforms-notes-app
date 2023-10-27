@@ -692,6 +692,7 @@
             this.deleteTransactionButton.TabIndex = 3;
             this.deleteTransactionButton.Text = "Удалить";
             this.deleteTransactionButton.UseVisualStyleBackColor = true;
+            this.deleteTransactionButton.Click += new System.EventHandler(this.deleteTransactionButton_Click);
             // 
             // createTransactionButton
             // 

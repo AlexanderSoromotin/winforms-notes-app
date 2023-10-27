@@ -104,7 +104,7 @@
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(145, 51);
             this.buttonLogin.TabIndex = 5;
-            this.buttonLogin.Text = "ВХОД";
+            this.buttonLogin.Text = "Вход";
             this.buttonLogin.UseVisualStyleBackColor = false;
             this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
