@@ -51,7 +51,7 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.Location = new System.Drawing.Point(72, 84);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(753, 48);
+            this.label7.Size = new System.Drawing.Size(502, 32);
             this.label7.TabIndex = 26;
             this.label7.Text = "Изменение повтояющейся операции";
             // 
@@ -179,6 +179,7 @@
             this.Controls.Add(this.saveRecurringTransaction);
             this.Controls.Add(this.recurringTransactionDescription);
             this.Controls.Add(this.recurringTransactionAmount);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "recurringTransactions";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

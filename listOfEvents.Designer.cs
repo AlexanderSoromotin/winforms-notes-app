@@ -95,6 +95,7 @@
             this.ClientSize = new System.Drawing.Size(918, 672);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dataGridView1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "listOfEvents";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
