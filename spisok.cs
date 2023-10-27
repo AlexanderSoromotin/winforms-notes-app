@@ -29,6 +29,7 @@ namespace Zametki_Bal_Kuz
         private bool isSearchTextDisplayed = true;
         private string searchText = "Поиск...";
 
+
         // Свойство для передачи выбранной даты
         
         public spisok()
@@ -38,15 +39,19 @@ namespace Zametki_Bal_Kuz
             // Установите текст по умолчанию
             textBoxSearch.ForeColor = System.Drawing.Color.Gray;
             textBoxSearch.Text = searchText;
+            userName.Text = AppData.user_name;
+
+            // MessageBox.Show(AppData.user_id.ToString());
         }
         
         private void CreateColumns() 
         {
-            dataGridView1.Columns.Add("id_note", "Код заметки");
+            dataGridView1.Columns.Add("id_note", "№");
             dataGridView1.Columns.Add("dateInSystem", "Дата");
             dataGridView1.Columns.Add("title", "Заголовок");
             dataGridView1.Columns.Add("text", "Текст");
             dataGridView1.Columns.Add("status", "Статус");
+            dataGridView1.Columns.Add("status", "Тип");
             //dataGridView1.Columns.Add("id_user", "Логин пользователя");
             //dataGridView1.Columns.Add("IsNew", String.Empty);
         }
@@ -54,14 +59,21 @@ namespace Zametki_Bal_Kuz
         private void ReadSingleRows(DataGridView dgw, IDataRecord record)
         {
             string status = (record.GetString(4) == "1") ? "Завершена" : "Не завершена";
+            string is_event = (record.GetString(5) == "True") ? "Событие" : "Заметка";
 
-            dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetString(2), record.GetString(3), status, RowState.ModifiedNew);
+            // Преобразование форматированного текста заметки в обычный
+            string text = record.GetString(3);
+            byte[] rtfBytes = Convert.FromBase64String(text);
+            string rtfText = Encoding.UTF8.GetString(rtfBytes);
+            text = GetPlainTextFromRtf(rtfText);
+
+            dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetString(2), text, status, is_event, RowState.ModifiedNew);
         }
         private void RefreshDataGrid(DataGridView dgw) //выводит данные из бд в датагрид
         {
             dgw.Rows.Clear();
 
-            string queryString = $"select id_note, dateInSystem, title, text, is_completed from note";
+            string queryString = $"select id_note, dateInSystem, title, text, is_completed, is_event from note where id_user = {AppData.user_id} order by id_note desc";
 
             MySqlCommand command = new MySqlCommand(queryString, DB.getConnection());
 
@@ -74,6 +86,28 @@ namespace Zametki_Bal_Kuz
                 ReadSingleRows(dgw, reader);
             }
             reader.Close();
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (!row.IsNewRow)
+                {
+                    //row.Cells[3].Value = ConvertToPlainText(row.Cells[3].Value.ToString());
+                }
+            }
+
+            dgw.Columns[0].Width = 25; // Номер
+            dgw.Columns[1].Width = 80; // Дата
+            dgw.Columns[2].Width = 110; // Заголовок
+            dgw.Columns[3].Width = 160; // Текст
+            dgw.Columns[4].Width = 90; // Статус
+            dgw.Columns[5].Width = 70; // Тип
+        }
+
+        public static string GetPlainTextFromRtf(string rtf) {
+            using (RichTextBox richTextBox = new RichTextBox()) {
+                richTextBox.Rtf = rtf;
+                return richTextBox.Text;
+            }
         }
 
         private void spisok_Load(object sender, EventArgs e)
@@ -83,6 +117,9 @@ namespace Zametki_Bal_Kuz
         }
         private void pictureBox_exit_Click(object sender, EventArgs e)
         {
+            AppData.user_name = "";
+            AppData.user_id = 0;
+            AppData.setUserToken("");
             loginForm form1 = new loginForm();
             form1.Show();
             this.Close();
@@ -90,7 +127,7 @@ namespace Zametki_Bal_Kuz
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            zametka zametkaForm = new zametka();
+            addNote zametkaForm = new addNote();
             zametkaForm.Show(); // Установите флаг, что это новая заметка
             Hide();
         }
@@ -152,7 +189,7 @@ namespace Zametki_Bal_Kuz
                 string text = row.Cells["text"].Value.ToString(); // Получить текст заметки из выбранной строки
                 DateTime date = Convert.ToDateTime(row.Cells["dateInSystem"].Value); // Получить дату из выбранной строки
 
-                ZametkaEditForm zametkaForm = new ZametkaEditForm(title, text, date, Convert.ToInt32(id)); // Создать экземпляр формы "zametka" и передать данные для редактирования
+                editNoteForm zametkaForm = new editNoteForm(title, text, date, Convert.ToInt32(id)); // Создать экземпляр формы "zametka" и передать данные для редактирования
                 DialogResult result = zametkaForm.ShowDialog(); // Показать форму "zametka" модально для редактирования
 
                 if (result == DialogResult.OK) // Проверить, если пользователь нажал "OK" на форме "zametka"
@@ -214,6 +251,51 @@ namespace Zametki_Bal_Kuz
         {
             ToolTip tt = new ToolTip();
             tt.SetToolTip(this.refreshListButton, "Обновить");
+        }
+
+        private void pictureBox_delete_Click(object sender, EventArgs e) {
+            // Удаление заметок
+            if (dataGridView1.SelectedRows.Count > 0) {
+                // Получите выбранную строку
+                DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
+
+                // Получите значение из первого столбца выбранной строки (предполагается, что это столбец с индексом 0)
+                int id = Convert.ToInt32(selectedRow.Cells[0].Value);
+                
+                var addQuery = $"delete from note where id_note = {id}";
+                var command = new MySqlCommand(addQuery, DB.getConnection());
+                command.ExecuteNonQuery();
+
+                RefreshDataGrid(dataGridView1);
+            }
+            else {
+                // Выведите сообщение пользователю, что не выбрано ни одной строки
+                MessageBox.Show("Выберите строку с заметой, которую хотите удалить");
+            }
+        }
+
+        private void pictureBox_delete_MouseHover(object sender, EventArgs e) {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(this.pictureBox_delete, "Удалить заметку");
+        }
+
+        private void pictureBox_help_Click(object sender, EventArgs e)
+        {
+            helpForm help = new helpForm();
+            help.Show();
+            Hide();
+        }
+
+        private void pictureBox_help_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(this.pictureBox_help, "Помощь");
+        }
+
+        private void pictureBox_exit_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(this.pictureBox_exit, "Выход");
         }
     }
 }

@@ -15,7 +15,7 @@ using MySql.Data.MySqlClient;
 
 namespace Zametki_Bal_Kuz
 {
-    public partial class zametka : Form
+    public partial class addNote : Form
     {
         DB DB = new DB();
 
@@ -28,7 +28,7 @@ namespace Zametki_Bal_Kuz
 
         private bool isTxtTitleDisplayed = true;
         private string TxtTitle = "Заголовок";
-        public zametka()
+        public addNote()
         {
             InitializeComponent();
             // Установите текст по умолчанию
@@ -102,14 +102,20 @@ namespace Zametki_Bal_Kuz
             dateTimePicker1.CustomFormat = "yyyy-MM-dd";
             var date = dateTimePicker1.Text;
             var title = txtTitle.Text;
-            var text = richTextBox1.Text;
+            var text = richTextBox1.Rtf;
+            int is_event = isEventCheckBox.Checked ? 1 : 0;
+
+
+            byte[] rtfBytes = Encoding.UTF8.GetBytes(text); // Используйте соответствующую кодировку
+            string base64Rtf = Convert.ToBase64String(rtfBytes);
 
             if (!string.IsNullOrWhiteSpace(richTextBox1.Text) && !string.IsNullOrWhiteSpace(dateTimePicker1.Text))
             {
-                var addQuery = $"insert into note (dateInSystem, title, text, id_user) values ('{date}', '{title}', '{text}', {AppData.user_id})";
+                var addQuery = $"insert into note (dateInSystem, title, text, id_user, is_event) values ('{date}', '{title}', @text, {AppData.user_id}, {is_event})";
 
-                var command = new MySqlCommand(addQuery, DB.getConnection());
-                command.ExecuteNonQuery();
+                MySqlCommand cmd = new MySqlCommand(addQuery, DB.getConnection());
+                cmd.Parameters.AddWithValue("@text", base64Rtf);
+                cmd.ExecuteNonQuery();
 
                 MessageBox.Show("Запись создана!", "Успех)", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -137,6 +143,7 @@ namespace Zametki_Bal_Kuz
                 richTextBox1.SelectionFont = newFont;
             }
         }
+        
         private void pictureBox_italic_Click(object sender, EventArgs e) //курсив
         {
             if (richTextBox1.SelectionFont != null)
@@ -207,7 +214,7 @@ namespace Zametki_Bal_Kuz
             a = float.Parse(textBox1.Text);
             textBox1.Clear();
             count = 1;
-            label3.Text = a.ToString() + "+";
+            label3.Text = a.ToString() + " +";
             znak = true;
         }
 
@@ -216,7 +223,7 @@ namespace Zametki_Bal_Kuz
             a = float.Parse(textBox1.Text);
             textBox1.Clear();
             count = 2;
-            label3.Text = a.ToString() + "-";
+            label3.Text = a.ToString() + " -";
             znak = true;
         }
 
@@ -225,7 +232,7 @@ namespace Zametki_Bal_Kuz
             a = float.Parse(textBox1.Text);
             textBox1.Clear();
             count = 3;
-            label3.Text = a.ToString() + "*";
+            label3.Text = a.ToString() + " *";
             znak = true;
         }
 
@@ -234,7 +241,7 @@ namespace Zametki_Bal_Kuz
             a = float.Parse(textBox1.Text);
             textBox1.Clear();
             count = 4;
-            label3.Text = a.ToString() + "/";
+            label3.Text = a.ToString() + " /";
             znak = true;
         }
         private void calculate()
@@ -295,6 +302,11 @@ namespace Zametki_Bal_Kuz
                 textBox1.Text = textBox1.Text.Replace("-", "");
                 znak = true;
             }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void button12_Click(object sender, EventArgs e) //проценты

@@ -33,6 +33,7 @@
             this.pictureBox_delete = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.userName = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox_exit = new System.Windows.Forms.PictureBox();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
@@ -40,6 +41,7 @@
             this.pictureBox_event = new System.Windows.Forms.PictureBox();
             this.refreshListButton = new System.Windows.Forms.PictureBox();
             this.pictureBox_money = new System.Windows.Forms.PictureBox();
+            this.pictureBox_help = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_delete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -49,6 +51,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_event)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.refreshListButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_money)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_help)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -69,24 +72,25 @@
             // pictureBox_delete
             // 
             this.pictureBox_delete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_delete.Enabled = false;
             this.pictureBox_delete.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_delete.Image")));
-            this.pictureBox_delete.Location = new System.Drawing.Point(18, 250);
+            this.pictureBox_delete.Location = new System.Drawing.Point(11, 248);
             this.pictureBox_delete.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox_delete.Name = "pictureBox_delete";
-            this.pictureBox_delete.Size = new System.Drawing.Size(52, 50);
-            this.pictureBox_delete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_delete.Size = new System.Drawing.Size(64, 56);
+            this.pictureBox_delete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox_delete.TabIndex = 8;
             this.pictureBox_delete.TabStop = false;
+            this.pictureBox_delete.Click += new System.EventHandler(this.pictureBox_delete_Click);
+            this.pictureBox_delete.MouseHover += new System.EventHandler(this.pictureBox_delete_MouseHover);
             // 
             // pictureBox2
             // 
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(15, 180);
+            this.pictureBox2.Location = new System.Drawing.Point(16, 180);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(63, 58);
+            this.pictureBox2.Size = new System.Drawing.Size(60, 58);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 9;
             this.pictureBox2.TabStop = false;
@@ -96,6 +100,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.userName);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.pictureBox_exit);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -104,16 +109,30 @@
             this.panel1.Size = new System.Drawing.Size(1008, 45);
             this.panel1.TabIndex = 10;
             // 
+            // userName
+            // 
+            this.userName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.userName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.userName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.userName.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.userName.Location = new System.Drawing.Point(719, 6);
+            this.userName.Name = "userName";
+            this.userName.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.userName.Size = new System.Drawing.Size(225, 30);
+            this.userName.TabIndex = 15;
+            this.userName.Text = "Имя пользователя";
+            this.userName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.ForeColor = System.Drawing.SystemColors.Window;
-            this.label3.Location = new System.Drawing.Point(404, 6);
+            this.label3.Font = new System.Drawing.Font("Consolas", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label3.Location = new System.Drawing.Point(404, 4);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(214, 32);
+            this.label3.Size = new System.Drawing.Size(215, 37);
             this.label3.TabIndex = 14;
-            this.label3.Text = "ВСЕ ЗАМЕТКИ";
+            this.label3.Text = "Все заметки";
             // 
             // pictureBox_exit
             // 
@@ -126,6 +145,7 @@
             this.pictureBox_exit.TabIndex = 11;
             this.pictureBox_exit.TabStop = false;
             this.pictureBox_exit.Click += new System.EventHandler(this.pictureBox_exit_Click);
+            this.pictureBox_exit.MouseHover += new System.EventHandler(this.pictureBox_exit_MouseHover);
             // 
             // textBoxSearch
             // 
@@ -151,9 +171,9 @@
             // 
             this.pictureBox_event.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox_event.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_event.Image")));
-            this.pictureBox_event.Location = new System.Drawing.Point(18, 114);
+            this.pictureBox_event.Location = new System.Drawing.Point(16, 114);
             this.pictureBox_event.Name = "pictureBox_event";
-            this.pictureBox_event.Size = new System.Drawing.Size(52, 54);
+            this.pictureBox_event.Size = new System.Drawing.Size(57, 54);
             this.pictureBox_event.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox_event.TabIndex = 16;
             this.pictureBox_event.TabStop = false;
@@ -178,14 +198,27 @@
             // 
             this.pictureBox_money.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox_money.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_money.Image")));
-            this.pictureBox_money.Location = new System.Drawing.Point(11, 314);
+            this.pictureBox_money.Location = new System.Drawing.Point(13, 314);
             this.pictureBox_money.Name = "pictureBox_money";
-            this.pictureBox_money.Size = new System.Drawing.Size(71, 65);
+            this.pictureBox_money.Size = new System.Drawing.Size(63, 65);
             this.pictureBox_money.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox_money.TabIndex = 18;
             this.pictureBox_money.TabStop = false;
             this.pictureBox_money.Click += new System.EventHandler(this.pictureBox_money_Click);
             this.pictureBox_money.MouseHover += new System.EventHandler(this.pictureBox_money_MouseHover);
+            // 
+            // pictureBox_help
+            // 
+            this.pictureBox_help.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox_help.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_help.Image")));
+            this.pictureBox_help.Location = new System.Drawing.Point(17, 392);
+            this.pictureBox_help.Name = "pictureBox_help";
+            this.pictureBox_help.Size = new System.Drawing.Size(56, 51);
+            this.pictureBox_help.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox_help.TabIndex = 19;
+            this.pictureBox_help.TabStop = false;
+            this.pictureBox_help.Click += new System.EventHandler(this.pictureBox_help_Click);
+            this.pictureBox_help.MouseHover += new System.EventHandler(this.pictureBox_help_MouseHover);
             // 
             // spisok
             // 
@@ -193,6 +226,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(109)))), ((int)(((byte)(84)))));
             this.ClientSize = new System.Drawing.Size(1008, 612);
+            this.Controls.Add(this.pictureBox_help);
             this.Controls.Add(this.pictureBox_money);
             this.Controls.Add(this.refreshListButton);
             this.Controls.Add(this.pictureBox_event);
@@ -218,6 +252,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_event)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.refreshListButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_money)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_help)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -236,5 +271,7 @@
         private System.Windows.Forms.PictureBox pictureBox_event;
         private System.Windows.Forms.PictureBox refreshListButton;
         private System.Windows.Forms.PictureBox pictureBox_money;
+        private System.Windows.Forms.Label userName;
+        private System.Windows.Forms.PictureBox pictureBox_help;
     }
 }
