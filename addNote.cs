@@ -118,6 +118,9 @@ namespace Zametki_Bal_Kuz
                 cmd.ExecuteNonQuery();
 
                 MessageBox.Show("Запись создана!", "Успех)", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                spisok spisok = new spisok();
+                spisok.Show();
+                Hide();
             }
 
             else

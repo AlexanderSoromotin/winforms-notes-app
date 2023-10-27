@@ -54,7 +54,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(387, 43);
+            this.panel2.Size = new System.Drawing.Size(469, 43);
             this.panel2.TabIndex = 25;
             // 
             // label2
@@ -62,7 +62,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.Color.Snow;
-            this.label2.Location = new System.Drawing.Point(156, 8);
+            this.label2.Location = new System.Drawing.Point(186, 8);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(95, 25);
             this.label2.TabIndex = 23;
@@ -85,9 +85,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(109)))), ((int)(((byte)(84)))));
-            this.ClientSize = new System.Drawing.Size(387, 350);
+            this.ClientSize = new System.Drawing.Size(469, 350);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.monthCalendar1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "@event";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
