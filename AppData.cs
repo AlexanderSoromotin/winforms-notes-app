@@ -18,6 +18,8 @@ namespace Zametki_Bal_Kuz
 
         public static void setUserToken(string token) {
             // Запись токена пользователя в файл
+            return; 
+
             try {
                 File.WriteAllText("userToken.txt", token);
                 Console.WriteLine("Текст успешно записан в файл.");

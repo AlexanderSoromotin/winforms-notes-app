@@ -65,6 +65,8 @@ namespace Zametki_Bal_Kuz
             var login = txtLogin.Text;
             var pass = txtPassword.Text;
 
+            
+
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             DataTable table = new DataTable();
 
