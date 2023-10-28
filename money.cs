@@ -496,6 +496,12 @@ namespace Zametki_Bal_Kuz
 
             DB.closeConnection();
         }
+
+        private void pictureBox_help_Click(object sender, EventArgs e)
+        {
+            helpForm helpForm = new helpForm("finance");
+            helpForm.Show();
+        }
     }
 }
 // Записывать дату последнего платежа при создании платежа

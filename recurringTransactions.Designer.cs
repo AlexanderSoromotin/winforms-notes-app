@@ -41,8 +41,10 @@
             this.pictureBox_Back = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.frequencyTextBox = new System.Windows.Forms.TextBox();
+            this.pictureBox_help = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Back)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_help)).BeginInit();
             this.SuspendLayout();
             // 
             // label7
@@ -161,12 +163,25 @@
             this.frequencyTextBox.Size = new System.Drawing.Size(200, 32);
             this.frequencyTextBox.TabIndex = 28;
             // 
+            // pictureBox_help
+            // 
+            this.pictureBox_help.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox_help.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_help.Image")));
+            this.pictureBox_help.Location = new System.Drawing.Point(592, 12);
+            this.pictureBox_help.Name = "pictureBox_help";
+            this.pictureBox_help.Size = new System.Drawing.Size(51, 36);
+            this.pictureBox_help.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox_help.TabIndex = 30;
+            this.pictureBox_help.TabStop = false;
+            this.pictureBox_help.Click += new System.EventHandler(this.pictureBox_help_Click);
+            // 
             // recurringTransactions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(109)))), ((int)(((byte)(84)))));
             this.ClientSize = new System.Drawing.Size(655, 672);
+            this.Controls.Add(this.pictureBox_help);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.frequencyTextBox);
             this.Controls.Add(this.pictureBox_Back);
@@ -186,6 +201,7 @@
             this.Text = "Заметки";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Back)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_help)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -205,5 +221,6 @@
         private System.Windows.Forms.PictureBox pictureBox_Back;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox frequencyTextBox;
+        private System.Windows.Forms.PictureBox pictureBox_help;
     }
 }

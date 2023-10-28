@@ -65,6 +65,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.isEventCheckBox = new System.Windows.Forms.CheckBox();
+            this.pictureBox_help = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_italic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bold)).BeginInit();
@@ -72,12 +73,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Back)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_help)).BeginInit();
             this.SuspendLayout();
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(656, 8);
+            this.dateTimePicker1.Location = new System.Drawing.Point(16, 368);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(176, 26);
@@ -151,9 +153,9 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(79)))), ((int)(((byte)(61)))));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.pictureBox_help);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.pictureBox_Back);
-            this.panel2.Controls.Add(this.dateTimePicker1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -234,7 +236,7 @@
             this.button20.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Peru;
             this.button20.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Peru;
             this.button20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button20.Location = new System.Drawing.Point(152, 346);
             this.button20.Name = "button20";
             this.button20.Size = new System.Drawing.Size(60, 60);
@@ -592,6 +594,7 @@
             // 
             this.panel4.Controls.Add(this.richTextBox1);
             this.panel4.Controls.Add(this.txtTitle);
+            this.panel4.Controls.Add(this.dateTimePicker1);
             this.panel4.Location = new System.Drawing.Point(25, 55);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(487, 415);
@@ -601,7 +604,7 @@
             // 
             this.richTextBox1.Location = new System.Drawing.Point(16, 57);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(450, 318);
+            this.richTextBox1.Size = new System.Drawing.Size(450, 300);
             this.richTextBox1.TabIndex = 14;
             this.richTextBox1.Text = "";
             this.richTextBox1.Enter += new System.EventHandler(this.richTextBox1_Enter);
@@ -617,6 +620,18 @@
             this.isEventCheckBox.TabIndex = 14;
             this.isEventCheckBox.Text = "Это событие";
             this.isEventCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox_help
+            // 
+            this.pictureBox_help.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox_help.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_help.Image")));
+            this.pictureBox_help.Location = new System.Drawing.Point(777, 2);
+            this.pictureBox_help.Name = "pictureBox_help";
+            this.pictureBox_help.Size = new System.Drawing.Size(51, 36);
+            this.pictureBox_help.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox_help.TabIndex = 31;
+            this.pictureBox_help.TabStop = false;
+            this.pictureBox_help.Click += new System.EventHandler(this.pictureBox_help_Click);
             // 
             // addNote
             // 
@@ -646,6 +661,7 @@
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_help)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -689,5 +705,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.CheckBox isEventCheckBox;
+        private System.Windows.Forms.PictureBox pictureBox_help;
     }
 }

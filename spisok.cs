@@ -159,7 +159,7 @@ namespace Zametki_Bal_Kuz
         {
             dgw.Rows.Clear();
 
-            string searchString = $"select * from note where concat (dateInSystem, text, title) like '%" + textBoxSearch.Text + "%'";
+            string searchString = $"select * from note where concat (dateInSystem, text, title, is_completed, is_event) like '%" + textBoxSearch.Text + "%'";
 
             MySqlCommand com = new MySqlCommand(searchString, DB.getConnection());
 

@@ -15,16 +15,33 @@ namespace Zametki_Bal_Kuz
     {
         DB DB = new DB();
 
-        public helpForm()
+        public helpForm(string tabName = "")
         {
             InitializeComponent();
-        }
+            if (tabName == "home") 
+            {
+                tabControlHelp.SelectedIndex = 0;
+            }
 
-        private void pictureBox_Back_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            spisok spisok = new spisok();
-            spisok.Show();
+            if (tabName == "events")
+            {
+                tabControlHelp.SelectedIndex = 1;
+            }
+
+            if (tabName == "addNote")
+            {
+                tabControlHelp.SelectedIndex = 2;
+            }
+
+            if (tabName == "editNote")
+            {
+                tabControlHelp.SelectedIndex = 3;
+            }
+
+            if (tabName == "finance")
+            {
+                tabControlHelp.SelectedIndex = 4;
+            }
         }
 
         private void transactions_Click(object sender, EventArgs e)

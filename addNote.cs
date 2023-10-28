@@ -312,6 +312,12 @@ namespace Zametki_Bal_Kuz
 
         }
 
+        private void pictureBox_help_Click(object sender, EventArgs e)
+        {
+            helpForm helpForm = new helpForm("addNote");
+            helpForm.Show();
+        }
+
         private void button12_Click(object sender, EventArgs e) //проценты
         {
             float percentage = float.Parse(textBox1.Text) / 100;

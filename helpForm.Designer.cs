@@ -47,7 +47,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
-            this.pictureBox_Back = new System.Windows.Forms.PictureBox();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.guideText = new System.Windows.Forms.RichTextBox();
+            this.textBoxSearch = new System.Windows.Forms.TextBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.tabControlHelp.SuspendLayout();
             this.mainScreen.SuspendLayout();
             this.events.SuspendLayout();
@@ -58,7 +61,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Back)).BeginInit();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlHelp
@@ -69,6 +73,7 @@
             this.tabControlHelp.Controls.Add(this.editNote);
             this.tabControlHelp.Controls.Add(this.finance);
             this.tabControlHelp.Controls.Add(this.transactions);
+            this.tabControlHelp.Controls.Add(this.tabPage1);
             this.tabControlHelp.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tabControlHelp.Location = new System.Drawing.Point(0, 49);
             this.tabControlHelp.Name = "tabControlHelp";
@@ -140,6 +145,7 @@
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
+            this.textBox3.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.textBox3.Size = new System.Drawing.Size(999, 584);
             this.textBox3.TabIndex = 2;
             this.textBox3.Text = resources.GetString("textBox3.Text");
@@ -249,7 +255,6 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(79)))), ((int)(((byte)(61)))));
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.label9);
-            this.panel3.Controls.Add(this.pictureBox_Back);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
@@ -261,23 +266,50 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label9.ForeColor = System.Drawing.Color.Snow;
-            this.label9.Location = new System.Drawing.Point(375, 8);
+            this.label9.Location = new System.Drawing.Point(449, 8);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(92, 25);
+            this.label9.Size = new System.Drawing.Size(121, 25);
             this.label9.TabIndex = 23;
-            this.label9.Text = "Помощь";
+            this.label9.Text = "Справочник";
             // 
-            // pictureBox_Back
+            // tabPage1
             // 
-            this.pictureBox_Back.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_Back.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_Back.Image")));
-            this.pictureBox_Back.Location = new System.Drawing.Point(4, 2);
-            this.pictureBox_Back.Name = "pictureBox_Back";
-            this.pictureBox_Back.Size = new System.Drawing.Size(42, 36);
-            this.pictureBox_Back.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox_Back.TabIndex = 12;
-            this.pictureBox_Back.TabStop = false;
-            this.pictureBox_Back.Click += new System.EventHandler(this.pictureBox_Back_Click);
+            this.tabPage1.BackColor = System.Drawing.Color.Tan;
+            this.tabPage1.Controls.Add(this.pictureBox3);
+            this.tabPage1.Controls.Add(this.textBoxSearch);
+            this.tabPage1.Controls.Add(this.guideText);
+            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1005, 590);
+            this.tabPage1.TabIndex = 6;
+            this.tabPage1.Text = "Поиск";
+            // 
+            // guideText
+            // 
+            this.guideText.Location = new System.Drawing.Point(233, 66);
+            this.guideText.Name = "guideText";
+            this.guideText.Size = new System.Drawing.Size(551, 495);
+            this.guideText.TabIndex = 0;
+            this.guideText.Text = "";
+            // 
+            // textBoxSearch
+            // 
+            this.textBoxSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxSearch.Location = new System.Drawing.Point(233, 22);
+            this.textBoxSearch.Name = "textBoxSearch";
+            this.textBoxSearch.Size = new System.Drawing.Size(551, 32);
+            this.textBoxSearch.TabIndex = 1;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(187, 17);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(37, 41);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 13;
+            this.pictureBox3.TabStop = false;
             // 
             // helpForm
             // 
@@ -309,7 +341,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Back)).EndInit();
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -321,7 +355,6 @@
         private System.Windows.Forms.TabPage events;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.PictureBox pictureBox_Back;
         private System.Windows.Forms.TabPage addNote;
         private System.Windows.Forms.TabPage editNote;
         private System.Windows.Forms.TabPage finance;
@@ -335,5 +368,9 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TextBox textBoxSearch;
+        private System.Windows.Forms.RichTextBox guideText;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }
