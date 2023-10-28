@@ -86,5 +86,11 @@ namespace Zametki_Bal_Kuz
             @event eventForm = new @event();
             eventForm.Show();
         }
+
+        private void pictureBox_help_Click(object sender, EventArgs e)
+        {
+            helpForm helpForm = new helpForm("events");
+            helpForm.Show();
+        }
     }
 }

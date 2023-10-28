@@ -90,5 +90,11 @@ namespace Zametki_Bal_Kuz
             money form = new money();
             form.Show();
         }
+
+        private void pictureBox_help_Click(object sender, EventArgs e)
+        {
+            helpForm helpForm = new helpForm("finance");
+            helpForm.Show();
+        }
     }
 }

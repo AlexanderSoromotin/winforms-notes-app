@@ -212,6 +212,10 @@ namespace Zametki_Bal_Kuz
             button_markIncompleteNote.Hide();
         }
 
-        
+        private void pictureBox_help_Click(object sender, EventArgs e)
+        {
+            helpForm helpForm = new helpForm("editNote");
+            helpForm.Show();
+        }
     }
 }
