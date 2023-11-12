@@ -91,5 +91,26 @@ namespace Zametki_Bal_Kuz
             guideText.SelectionBackColor = Color.White; // Измените цвет фона по вашему желанию
             guideText.SelectionBackColor = guideText.BackColor; // Восстановите цвет фона по умолчанию
         }
+        private void changeTheme()
+        {
+            this.BackColor = AppData.backColor1;
+            tabControlHelp.BackColor = AppData.backColor1;
+            label9.ForeColor = AppData.fontColor;
+            panel3.BackColor = AppData.backColor2; 
+            label1.ForeColor = AppData.fontColor;
+            label2.ForeColor = AppData.fontColor;
+            transactions.BackColor = AppData.backColor1;
+            tabPage1.BackColor = AppData.backColor1;
+            mainScreen.BackColor = AppData.backColor1;
+            addNote.BackColor = AppData.backColor1;
+            editNote.BackColor = AppData.backColor1;
+            finance.BackColor = AppData.backColor1;
+            events.BackColor = AppData.backColor1;  
+
+        }
+        private void helpForm_Load(object sender, EventArgs e)
+        {
+            changeTheme();
+        }
     }
 }

@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using static System.Net.Mime.MediaTypeNames;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 
 namespace Zametki_Bal_Kuz
@@ -268,8 +269,51 @@ namespace Zametki_Bal_Kuz
             loadGoalTab();
 
             DB.closeConnection();
+            changeTheme();
         }
+        private void changeTheme()
+        {
+            this.BackColor = AppData.backColor1;
+            panel3.BackColor = AppData.backColor2;
+            label9.ForeColor = AppData.fontColor;
+            label17.ForeColor = AppData.fontColor;
+            label6.ForeColor = AppData.fontColor;
+            panel5.BackColor = AppData.backColor2;
+            panel1.BackColor = AppData.backColor2;
+            panel4.BackColor = AppData.backColor2;
+            panel2.BackColor = AppData.backColor2;
+            dgw_income.BackgroundColor = AppData.backColor2;
+            dgw_expenses.BackgroundColor = AppData.backColor2;
+            label16.ForeColor = AppData.fontColor;
+            label_income_total.ForeColor = AppData.fontColor;
+            label3.ForeColor = AppData.fontColor;
+            label_income_month.ForeColor = AppData.fontColor;
+            tabPage1.BackColor = AppData.backColor1;
+            label_expense_total.ForeColor = AppData.fontColor;
+            label_expense_month.ForeColor = AppData.fontColor;
+            tabPage2.BackColor = AppData.backColor1;
+            tabPage3.BackColor = AppData.backColor1;
+            label7.ForeColor = AppData.fontColor;
+            label10.ForeColor = AppData.fontColor;
+            label15.ForeColor = AppData.fontColor;
+            label8.ForeColor = AppData.fontColor;
+            label13.ForeColor = AppData.fontColor;
+            label11.ForeColor = AppData.fontColor;
+            label14.ForeColor = AppData.fontColor;
+            label12.ForeColor = AppData.fontColor;
+            label1.ForeColor = AppData.fontColor;
+            label2.ForeColor = AppData.fontColor;
+            label4.ForeColor = AppData.fontColor;
+            label5.ForeColor = AppData.fontColor;
+            recurringTransactionsLabel.ForeColor = AppData.fontColor;
+            tabPage4.BackColor = AppData.backColor1;
+            tabPage5.BackColor = AppData.backColor1;
+            recurring_transactions.BackColor = AppData.backColor2;
+            dgwRecurringTransactions.BackgroundColor = AppData.backColor1;
 
+
+
+        }
         private void pictureBox_Back_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -283,6 +327,12 @@ namespace Zametki_Bal_Kuz
             var amount = income_amont_txtbox.Text;
             var date = date_income.Value.ToString("yyyy-MM-dd HH:mm:ss");
             var description = income_description.Text;
+
+            if (Convert.ToInt16(amount) <= 0)
+            {
+                MessageBox.Show("Укажите другую сумму");
+                return;
+            }
 
             if (!string.IsNullOrWhiteSpace(amount) && !string.IsNullOrWhiteSpace(date) && !string.IsNullOrWhiteSpace(description))
             {
@@ -315,6 +365,12 @@ namespace Zametki_Bal_Kuz
             var amount = expense_amont_txtbox.Text;
             var date = date_expense.Value.ToString("yyyy-MM-dd HH:mm:ss");
             var description = expense_description.Text;
+
+            if (Convert.ToInt16(amount) <= 0)
+            {
+                MessageBox.Show("Укажите другую сумму");
+                return;
+            }
 
             if (!string.IsNullOrWhiteSpace(amount) && !string.IsNullOrWhiteSpace(date) && !string.IsNullOrWhiteSpace(description))
             {
@@ -352,6 +408,13 @@ namespace Zametki_Bal_Kuz
 
             var description = goalDescriptionTextBox.Text;
             var amount = Convert.ToInt32(goalAmountTextBox.Text);
+
+            if (amount <= 0)
+            {
+                MessageBox.Show("Укажите другую сумму");
+                return;
+
+            }
             var date = goalDueDateDateTimePicker.Value.ToString("yyyy-MM-dd HH:mm:ss");
             DateTime currentDate = DateTime.Now;
 

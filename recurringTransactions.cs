@@ -72,6 +72,12 @@ namespace Zametki_Bal_Kuz
                 isIncome = 0;
             }
 
+            if (frequency <= 0)
+            {
+                MessageBox.Show("Период другой период");
+                return;
+            }
+
             var addQuery = $"update recurring_transactions set amount = {amount}, startDate = '{startDate}', is_income = {isIncome}, description = '{text}', frequency = {frequency} where id = {transactionId}";
 
             var command = new MySqlCommand(addQuery, DB.getConnection());
@@ -95,6 +101,19 @@ namespace Zametki_Bal_Kuz
         {
             helpForm helpForm = new helpForm("finance");
             helpForm.Show();
+        }
+        private void changeTheme()
+        {
+            this.BackColor = AppData.backColor1;
+            label7.ForeColor = AppData.fontColor;
+            label10.ForeColor = AppData.fontColor;
+            label15.ForeColor = AppData.fontColor;
+            label1.ForeColor = AppData.fontColor;
+            label8.ForeColor = AppData.fontColor;
+        }
+        private void recurringTransactions_Load(object sender, EventArgs e)
+        {
+            changeTheme();
         }
     }
 }

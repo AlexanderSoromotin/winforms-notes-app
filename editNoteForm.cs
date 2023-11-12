@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using static System.Net.Mime.MediaTypeNames;
 using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
+using System.Reflection.Emit;
 
 namespace Zametki_Bal_Kuz
 {
@@ -216,6 +217,22 @@ namespace Zametki_Bal_Kuz
         {
             helpForm helpForm = new helpForm("editNote");
             helpForm.Show();
+        }
+        private void changeTheme()
+        {
+            this.BackColor = AppData.backColor1;
+            panel2.BackColor = AppData.backColor2;
+            label3.ForeColor = AppData.fontColor;
+            button_markIncompleteNote.BackColor = AppData.backColor2;
+            button_markIncompleteNote.ForeColor = AppData.fontColor;
+            button_save.BackColor = AppData.backColor2;
+            button_save.ForeColor = AppData.fontColor;
+            button_markCompletedNote.BackColor = AppData.backColor2;
+            button_markCompletedNote.ForeColor = AppData.fontColor;
+        }
+        private void editNoteForm_Load(object sender, EventArgs e)
+        {
+            changeTheme();
         }
     }
 }

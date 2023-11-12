@@ -157,7 +157,7 @@
             this.editNote.Location = new System.Drawing.Point(4, 29);
             this.editNote.Name = "editNote";
             this.editNote.Padding = new System.Windows.Forms.Padding(3);
-            this.editNote.Size = new System.Drawing.Size(1098, 590);
+            this.editNote.Size = new System.Drawing.Size(1256, 590);
             this.editNote.TabIndex = 3;
             this.editNote.Text = "Раздел \"Редактировать заметку\"";
             // 
@@ -168,7 +168,7 @@
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
             this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(1092, 584);
+            this.textBox4.Size = new System.Drawing.Size(1250, 584);
             this.textBox4.TabIndex = 2;
             this.textBox4.Text = resources.GetString("textBox4.Text");
             // 
@@ -179,7 +179,7 @@
             this.finance.Location = new System.Drawing.Point(4, 29);
             this.finance.Name = "finance";
             this.finance.Padding = new System.Windows.Forms.Padding(3);
-            this.finance.Size = new System.Drawing.Size(1098, 590);
+            this.finance.Size = new System.Drawing.Size(1256, 590);
             this.finance.TabIndex = 4;
             this.finance.Text = "Раздел \"Финансы\"";
             // 
@@ -191,7 +191,7 @@
             this.textBox5.Name = "textBox5";
             this.textBox5.ReadOnly = true;
             this.textBox5.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox5.Size = new System.Drawing.Size(1092, 584);
+            this.textBox5.Size = new System.Drawing.Size(1250, 584);
             this.textBox5.TabIndex = 2;
             this.textBox5.Text = resources.GetString("textBox5.Text");
             // 
@@ -325,6 +325,7 @@
             this.Name = "helpForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Заметки";
+            this.Load += new System.EventHandler(this.helpForm_Load);
             this.tabControlHelp.ResumeLayout(false);
             this.mainScreen.ResumeLayout(false);
             this.mainScreen.PerformLayout();

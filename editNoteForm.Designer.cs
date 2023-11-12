@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(editNoteForm));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox_help = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox_Back = new System.Windows.Forms.PictureBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -42,14 +43,13 @@
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.pictureBox_help = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_help)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Back)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_italic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bold)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_help)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -64,6 +64,18 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(646, 44);
             this.panel2.TabIndex = 17;
+            // 
+            // pictureBox_help
+            // 
+            this.pictureBox_help.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox_help.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_help.Image")));
+            this.pictureBox_help.Location = new System.Drawing.Point(581, 3);
+            this.pictureBox_help.Name = "pictureBox_help";
+            this.pictureBox_help.Size = new System.Drawing.Size(51, 36);
+            this.pictureBox_help.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox_help.TabIndex = 31;
+            this.pictureBox_help.TabStop = false;
+            this.pictureBox_help.Click += new System.EventHandler(this.pictureBox_help_Click);
             // 
             // label3
             // 
@@ -212,18 +224,6 @@
             this.richTextBox1.Text = "";
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
-            // pictureBox_help
-            // 
-            this.pictureBox_help.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_help.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_help.Image")));
-            this.pictureBox_help.Location = new System.Drawing.Point(581, 3);
-            this.pictureBox_help.Name = "pictureBox_help";
-            this.pictureBox_help.Size = new System.Drawing.Size(51, 36);
-            this.pictureBox_help.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox_help.TabIndex = 31;
-            this.pictureBox_help.TabStop = false;
-            this.pictureBox_help.Click += new System.EventHandler(this.pictureBox_help_Click);
-            // 
             // editNoteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -237,15 +237,16 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "editNoteForm";
             this.Text = "Заметки";
+            this.Load += new System.EventHandler(this.editNoteForm_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_help)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Back)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_italic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bold)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_help)).EndInit();
             this.ResumeLayout(false);
 
         }

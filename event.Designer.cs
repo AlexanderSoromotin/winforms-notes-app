@@ -31,12 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(@event));
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox_help = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox_Back = new System.Windows.Forms.PictureBox();
-            this.pictureBox_help = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Back)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_help)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Back)).BeginInit();
             this.SuspendLayout();
             // 
             // monthCalendar1
@@ -59,6 +59,18 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(469, 43);
             this.panel2.TabIndex = 25;
+            // 
+            // pictureBox_help
+            // 
+            this.pictureBox_help.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox_help.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_help.Image")));
+            this.pictureBox_help.Location = new System.Drawing.Point(411, 2);
+            this.pictureBox_help.Name = "pictureBox_help";
+            this.pictureBox_help.Size = new System.Drawing.Size(51, 36);
+            this.pictureBox_help.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox_help.TabIndex = 24;
+            this.pictureBox_help.TabStop = false;
+            this.pictureBox_help.Click += new System.EventHandler(this.pictureBox_help_Click);
             // 
             // label2
             // 
@@ -83,18 +95,6 @@
             this.pictureBox_Back.TabStop = false;
             this.pictureBox_Back.Click += new System.EventHandler(this.pictureBox_Back_Click);
             // 
-            // pictureBox_help
-            // 
-            this.pictureBox_help.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_help.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_help.Image")));
-            this.pictureBox_help.Location = new System.Drawing.Point(411, 2);
-            this.pictureBox_help.Name = "pictureBox_help";
-            this.pictureBox_help.Size = new System.Drawing.Size(51, 36);
-            this.pictureBox_help.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox_help.TabIndex = 24;
-            this.pictureBox_help.TabStop = false;
-            this.pictureBox_help.Click += new System.EventHandler(this.pictureBox_help_Click);
-            // 
             // @event
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -108,10 +108,11 @@
             this.Name = "@event";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Заметки";
+            this.Load += new System.EventHandler(this.@event_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Back)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_help)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Back)).EndInit();
             this.ResumeLayout(false);
 
         }

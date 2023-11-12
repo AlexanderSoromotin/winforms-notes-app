@@ -42,6 +42,7 @@
             this.refreshListButton = new System.Windows.Forms.PictureBox();
             this.pictureBox_money = new System.Windows.Forms.PictureBox();
             this.pictureBox_help = new System.Windows.Forms.PictureBox();
+            this.pictureBoxTheme = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_delete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -52,13 +53,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.refreshListButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_money)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_help)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTheme)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.Tan;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.GhostWhite;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(90, 89);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -220,12 +222,25 @@
             this.pictureBox_help.Click += new System.EventHandler(this.pictureBox_help_Click);
             this.pictureBox_help.MouseHover += new System.EventHandler(this.pictureBox_help_MouseHover);
             // 
+            // pictureBoxTheme
+            // 
+            this.pictureBoxTheme.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxTheme.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxTheme.Image")));
+            this.pictureBoxTheme.Location = new System.Drawing.Point(16, 456);
+            this.pictureBoxTheme.Name = "pictureBoxTheme";
+            this.pictureBoxTheme.Size = new System.Drawing.Size(56, 50);
+            this.pictureBoxTheme.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxTheme.TabIndex = 20;
+            this.pictureBoxTheme.TabStop = false;
+            this.pictureBoxTheme.Click += new System.EventHandler(this.pictureBoxTheme_Click);
+            // 
             // spisok
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(109)))), ((int)(((byte)(84)))));
             this.ClientSize = new System.Drawing.Size(1008, 612);
+            this.Controls.Add(this.pictureBoxTheme);
             this.Controls.Add(this.pictureBox_help);
             this.Controls.Add(this.pictureBox_money);
             this.Controls.Add(this.refreshListButton);
@@ -254,6 +269,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.refreshListButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_money)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_help)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTheme)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -274,5 +290,6 @@
         private System.Windows.Forms.PictureBox pictureBox_money;
         private System.Windows.Forms.Label userName;
         private System.Windows.Forms.PictureBox pictureBox_help;
+        private System.Windows.Forms.PictureBox pictureBoxTheme;
     }
 }

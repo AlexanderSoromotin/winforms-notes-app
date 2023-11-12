@@ -4,10 +4,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 
 namespace Zametki_Bal_Kuz
@@ -83,6 +85,16 @@ namespace Zametki_Bal_Kuz
         {
             helpForm helpForm = new helpForm("events");
             helpForm.Show();
+        }
+        private void changeTheme()
+        {
+            this.BackColor = AppData.backColor1;
+            panel2.BackColor = AppData.backColor2;
+            label2.ForeColor = AppData.fontColor;
+        }
+        private void event_Load(object sender, EventArgs e)
+        {
+            changeTheme();
         }
     }
 }

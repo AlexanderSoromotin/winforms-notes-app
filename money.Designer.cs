@@ -85,9 +85,9 @@
             this.recurringTransactionsLabel = new System.Windows.Forms.Label();
             this.dgwRecurringTransactions = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox_help = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
             this.pictureBox_Back = new System.Windows.Forms.PictureBox();
-            this.pictureBox_help = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -107,8 +107,8 @@
             this.recurring_transactions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgwRecurringTransactions)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Back)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_help)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Back)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -223,9 +223,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(319, 10);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(206, 25);
+            this.label3.Size = new System.Drawing.Size(195, 25);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Доходы за ОКТЯБРЬ";
+            this.label3.Text = "Доходы за НОЯБРЬ";
             // 
             // tabPage2
             // 
@@ -324,9 +324,9 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.Location = new System.Drawing.Point(312, 12);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(210, 25);
+            this.label6.Size = new System.Drawing.Size(199, 25);
             this.label6.TabIndex = 1;
-            this.label6.Text = "Расходы за ОКТЯБРЬ";
+            this.label6.Text = "Расходы за НОЯБРЬ";
             // 
             // tabPage3
             // 
@@ -564,7 +564,7 @@
             this.cancelGoalButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.cancelGoalButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.cancelGoalButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cancelGoalButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.cancelGoalButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.cancelGoalButton.Location = new System.Drawing.Point(358, 453);
             this.cancelGoalButton.Name = "cancelGoalButton";
             this.cancelGoalButton.Size = new System.Drawing.Size(147, 44);
@@ -578,7 +578,7 @@
             this.createPaymentButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(140)))), ((int)(((byte)(210)))));
             this.createPaymentButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(140)))), ((int)(((byte)(210)))));
             this.createPaymentButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.createPaymentButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.createPaymentButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.createPaymentButton.Location = new System.Drawing.Point(279, 515);
             this.createPaymentButton.Name = "createPaymentButton";
             this.createPaymentButton.Size = new System.Drawing.Size(302, 52);
@@ -599,7 +599,7 @@
             this.createGoalButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(210)))), ((int)(((byte)(140)))));
             this.createGoalButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(210)))), ((int)(((byte)(140)))));
             this.createGoalButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.createGoalButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.createGoalButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.createGoalButton.Location = new System.Drawing.Point(358, 380);
             this.createGoalButton.Name = "createGoalButton";
             this.createGoalButton.Size = new System.Drawing.Size(147, 44);
@@ -687,7 +687,7 @@
             this.deleteTransactionButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.deleteTransactionButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.deleteTransactionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.deleteTransactionButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.deleteTransactionButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.deleteTransactionButton.Location = new System.Drawing.Point(446, 530);
             this.deleteTransactionButton.Name = "deleteTransactionButton";
             this.deleteTransactionButton.Size = new System.Drawing.Size(129, 37);
@@ -701,7 +701,7 @@
             this.createTransactionButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Orange;
             this.createTransactionButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
             this.createTransactionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.createTransactionButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.createTransactionButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.createTransactionButton.Location = new System.Drawing.Point(270, 530);
             this.createTransactionButton.Name = "createTransactionButton";
             this.createTransactionButton.Size = new System.Drawing.Size(129, 37);
@@ -749,6 +749,18 @@
             this.panel3.Size = new System.Drawing.Size(861, 43);
             this.panel3.TabIndex = 12;
             // 
+            // pictureBox_help
+            // 
+            this.pictureBox_help.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox_help.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_help.Image")));
+            this.pictureBox_help.Location = new System.Drawing.Point(801, 2);
+            this.pictureBox_help.Name = "pictureBox_help";
+            this.pictureBox_help.Size = new System.Drawing.Size(51, 36);
+            this.pictureBox_help.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox_help.TabIndex = 25;
+            this.pictureBox_help.TabStop = false;
+            this.pictureBox_help.Click += new System.EventHandler(this.pictureBox_help_Click);
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -771,18 +783,6 @@
             this.pictureBox_Back.TabIndex = 12;
             this.pictureBox_Back.TabStop = false;
             this.pictureBox_Back.Click += new System.EventHandler(this.pictureBox_Back_Click);
-            // 
-            // pictureBox_help
-            // 
-            this.pictureBox_help.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_help.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_help.Image")));
-            this.pictureBox_help.Location = new System.Drawing.Point(801, 2);
-            this.pictureBox_help.Name = "pictureBox_help";
-            this.pictureBox_help.Size = new System.Drawing.Size(51, 36);
-            this.pictureBox_help.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox_help.TabIndex = 25;
-            this.pictureBox_help.TabStop = false;
-            this.pictureBox_help.Click += new System.EventHandler(this.pictureBox_help_Click);
             // 
             // money
             // 
@@ -826,8 +826,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgwRecurringTransactions)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Back)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_help)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Back)).EndInit();
             this.ResumeLayout(false);
 
         }

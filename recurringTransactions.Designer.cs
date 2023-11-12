@@ -199,6 +199,7 @@
             this.Name = "recurringTransactions";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Заметки";
+            this.Load += new System.EventHandler(this.recurringTransactions_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Back)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_help)).EndInit();
