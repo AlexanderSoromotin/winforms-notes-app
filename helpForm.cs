@@ -4,10 +4,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Zametki_Bal_Kuz
 {
@@ -15,21 +17,100 @@ namespace Zametki_Bal_Kuz
     {
         DB DB = new DB();
 
-        public helpForm()
+        public helpForm(string tabName = "")
         {
             InitializeComponent();
-        }
+            if (tabName == "home") 
+            {
+                tabControlHelp.SelectedIndex = 0;
+            }
 
-        private void pictureBox_Back_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            spisok spisok = new spisok();
-            spisok.Show();
+            if (tabName == "events")
+            {
+                tabControlHelp.SelectedIndex = 1;
+            }
+
+            if (tabName == "addNote")
+            {
+                tabControlHelp.SelectedIndex = 2;
+            }
+
+            if (tabName == "editNote")
+            {
+                tabControlHelp.SelectedIndex = 3;
+            }
+
+            if (tabName == "finance")
+            {
+                tabControlHelp.SelectedIndex = 4;
+            }
+
+            guideText.Text += "========= " + tabControlHelp.TabPages[0].Text + " =========\n";
+            guideText.Text += textBox1.Text + "\n\n";
+
+            guideText.Text += "========= " + tabControlHelp.TabPages[1].Text + " =========\n";
+            guideText.Text += textBox2.Text + "\n\n";
+
+            guideText.Text += "========= " + tabControlHelp.TabPages[2].Text + " =========\n";
+            guideText.Text += textBox3.Text + "\n\n";
+
+            guideText.Text += "========= " + tabControlHelp.TabPages[3].Text + " =========\n";
+            guideText.Text += textBox4.Text + "\n\n";
+
+            guideText.Text += "========= " + tabControlHelp.TabPages[4].Text + " =========\n";
+            guideText.Text += textBox5.Text + "\n\n";
         }
 
         private void transactions_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBoxSearch_TextChanged(object sender, EventArgs e) {
+            string searchText = textBoxSearch.Text;
+            SearchTextInRichTextBox(searchText);
+        }
+
+        private void SearchTextInRichTextBox(string searchText) {
+            // Очистите выделение в RichTextBox
+            ClearTextSelectionInRichTextBox();
+
+            if (!string.IsNullOrEmpty(searchText)) {
+                int index = guideText.Text.IndexOf(searchText);
+                if (index >= 0) {
+                    // Найдено совпадение, выделите текст в RichTextBox
+                    guideText.Select(index, searchText.Length);
+                    guideText.SelectionBackColor = Color.Yellow; // Измените цвет фона по вашему желанию
+                }
+            }
+        }
+
+        private void ClearTextSelectionInRichTextBox() {
+            guideText.DeselectAll();
+            guideText.Select(0, guideText.Text.Length);
+            guideText.SelectionBackColor = Color.White; // Измените цвет фона по вашему желанию
+            guideText.SelectionBackColor = guideText.BackColor; // Восстановите цвет фона по умолчанию
+        }
+        private void changeTheme()
+        {
+            this.BackColor = AppData.backColor1;
+            tabControlHelp.BackColor = AppData.backColor1;
+            label9.ForeColor = AppData.fontColor;
+            panel3.BackColor = AppData.backColor2; 
+            label1.ForeColor = AppData.fontColor;
+            label2.ForeColor = AppData.fontColor;
+            transactions.BackColor = AppData.backColor1;
+            tabPage1.BackColor = AppData.backColor1;
+            mainScreen.BackColor = AppData.backColor1;
+            addNote.BackColor = AppData.backColor1;
+            editNote.BackColor = AppData.backColor1;
+            finance.BackColor = AppData.backColor1;
+            events.BackColor = AppData.backColor1;  
+
+        }
+        private void helpForm_Load(object sender, EventArgs e)
+        {
+            changeTheme();
         }
     }
 }

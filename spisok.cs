@@ -114,6 +114,7 @@ namespace Zametki_Bal_Kuz
         {
             CreateColumns();
             RefreshDataGrid(dataGridView1);
+            changeTheme();
         }
         private void pictureBox_exit_Click(object sender, EventArgs e)
         {
@@ -159,7 +160,7 @@ namespace Zametki_Bal_Kuz
         {
             dgw.Rows.Clear();
 
-            string searchString = $"select * from note where concat (dateInSystem, text, title) like '%" + textBoxSearch.Text + "%'";
+            string searchString = $"select * from note where concat (dateInSystem, text, title, is_completed, is_event) like '%" + textBoxSearch.Text + "%'";
 
             MySqlCommand com = new MySqlCommand(searchString, DB.getConnection());
 
@@ -296,6 +297,19 @@ namespace Zametki_Bal_Kuz
         {
             ToolTip tt = new ToolTip();
             tt.SetToolTip(this.pictureBox_exit, "Выход");
+        }
+
+        private void pictureBoxTheme_Click(object sender, EventArgs e)
+        {
+            AppData.changeTheme();
+            changeTheme();
+        }
+        private void changeTheme()
+        {
+            this.BackColor = AppData.backColor1;
+            dataGridView1.BackgroundColor = AppData.backColor2;
+            label3.ForeColor = AppData.fontColor;
+            userName.ForeColor = AppData.fontColor;
         }
     }
 }

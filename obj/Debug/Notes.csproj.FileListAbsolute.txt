@@ -192,3 +192,63 @@ C:\Users\sanne\OneDrive\Desktop\winforms-notes-app\obj\Debug\Notes.csproj.CoreCo
 C:\Users\sanne\OneDrive\Desktop\winforms-notes-app\obj\Debug\Notes.csproj.CopyComplete
 C:\Users\sanne\OneDrive\Desktop\winforms-notes-app\obj\Debug\Zametki_Bal_Kuz.exe
 C:\Users\sanne\OneDrive\Desktop\winforms-notes-app\obj\Debug\Zametki_Bal_Kuz.pdb
+C:\Users\sanne\OneDrive\Desktop\winforms\bin\Debug\Zametki_Bal_Kuz.exe.config
+C:\Users\sanne\OneDrive\Desktop\winforms\bin\Debug\Zametki_Bal_Kuz.exe
+C:\Users\sanne\OneDrive\Desktop\winforms\bin\Debug\Zametki_Bal_Kuz.pdb
+C:\Users\sanne\OneDrive\Desktop\winforms\bin\Debug\MySql.Data.dll
+C:\Users\sanne\OneDrive\Desktop\winforms\bin\Debug\Google.Protobuf.dll
+C:\Users\sanne\OneDrive\Desktop\winforms\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\sanne\OneDrive\Desktop\winforms\bin\Debug\System.Memory.dll
+C:\Users\sanne\OneDrive\Desktop\winforms\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\sanne\OneDrive\Desktop\winforms\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\sanne\OneDrive\Desktop\winforms\bin\Debug\System.Buffers.dll
+C:\Users\sanne\OneDrive\Desktop\winforms\bin\Debug\MySql.Data.xml
+C:\Users\sanne\OneDrive\Desktop\winforms\obj\Debug\Notes.csproj.AssemblyReference.cache
+C:\Users\sanne\OneDrive\Desktop\winforms\obj\Debug\Notes.csproj.SuggestedBindingRedirects.cache
+C:\Users\sanne\OneDrive\Desktop\winforms\obj\Debug\Zametki_Bal_Kuz.exe.config
+C:\Users\sanne\OneDrive\Desktop\winforms\obj\Debug\Zametki_Bal_Kuz.event.resources
+C:\Users\sanne\OneDrive\Desktop\winforms\obj\Debug\Zametki_Bal_Kuz.helpForm.resources
+C:\Users\sanne\OneDrive\Desktop\winforms\obj\Debug\Zametki_Bal_Kuz.listOfEvents.resources
+C:\Users\sanne\OneDrive\Desktop\winforms\obj\Debug\Zametki_Bal_Kuz.loginForm.resources
+C:\Users\sanne\OneDrive\Desktop\winforms\obj\Debug\Zametki_Bal_Kuz.money.resources
+C:\Users\sanne\OneDrive\Desktop\winforms\obj\Debug\Zametki_Bal_Kuz.Properties.Resources.resources
+C:\Users\sanne\OneDrive\Desktop\winforms\obj\Debug\Zametki_Bal_Kuz.recurringTransactions.resources
+C:\Users\sanne\OneDrive\Desktop\winforms\obj\Debug\Zametki_Bal_Kuz.RegistrationForm.resources
+C:\Users\sanne\OneDrive\Desktop\winforms\obj\Debug\Zametki_Bal_Kuz.spisok.resources
+C:\Users\sanne\OneDrive\Desktop\winforms\obj\Debug\Zametki_Bal_Kuz.addNote.resources
+C:\Users\sanne\OneDrive\Desktop\winforms\obj\Debug\Zametki_Bal_Kuz.editNoteForm.resources
+C:\Users\sanne\OneDrive\Desktop\winforms\obj\Debug\Notes.csproj.GenerateResource.cache
+C:\Users\sanne\OneDrive\Desktop\winforms\obj\Debug\Notes.csproj.CoreCompileInputs.cache
+C:\Users\sanne\OneDrive\Desktop\winforms\obj\Debug\Notes.csproj.CopyComplete
+C:\Users\sanne\OneDrive\Desktop\winforms\obj\Debug\Zametki_Bal_Kuz.exe
+C:\Users\sanne\OneDrive\Desktop\winforms\obj\Debug\Zametki_Bal_Kuz.pdb
+C:\Users\Windows 10 Pro\Desktop\notes\bin\Debug\Zametki_Bal_Kuz.exe.config
+C:\Users\Windows 10 Pro\Desktop\notes\bin\Debug\Zametki_Bal_Kuz.exe
+C:\Users\Windows 10 Pro\Desktop\notes\bin\Debug\Zametki_Bal_Kuz.pdb
+C:\Users\Windows 10 Pro\Desktop\notes\bin\Debug\MySql.Data.dll
+C:\Users\Windows 10 Pro\Desktop\notes\bin\Debug\Google.Protobuf.dll
+C:\Users\Windows 10 Pro\Desktop\notes\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Windows 10 Pro\Desktop\notes\bin\Debug\System.Memory.dll
+C:\Users\Windows 10 Pro\Desktop\notes\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Windows 10 Pro\Desktop\notes\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Windows 10 Pro\Desktop\notes\bin\Debug\System.Buffers.dll
+C:\Users\Windows 10 Pro\Desktop\notes\bin\Debug\MySql.Data.xml
+C:\Users\Windows 10 Pro\Desktop\notes\obj\Debug\Notes.csproj.AssemblyReference.cache
+C:\Users\Windows 10 Pro\Desktop\notes\obj\Debug\Notes.csproj.SuggestedBindingRedirects.cache
+C:\Users\Windows 10 Pro\Desktop\notes\obj\Debug\Zametki_Bal_Kuz.exe.config
+C:\Users\Windows 10 Pro\Desktop\notes\obj\Debug\Zametki_Bal_Kuz.event.resources
+C:\Users\Windows 10 Pro\Desktop\notes\obj\Debug\Zametki_Bal_Kuz.helpForm.resources
+C:\Users\Windows 10 Pro\Desktop\notes\obj\Debug\Zametki_Bal_Kuz.listOfEvents.resources
+C:\Users\Windows 10 Pro\Desktop\notes\obj\Debug\Zametki_Bal_Kuz.loginForm.resources
+C:\Users\Windows 10 Pro\Desktop\notes\obj\Debug\Zametki_Bal_Kuz.money.resources
+C:\Users\Windows 10 Pro\Desktop\notes\obj\Debug\Zametki_Bal_Kuz.Properties.Resources.resources
+C:\Users\Windows 10 Pro\Desktop\notes\obj\Debug\Zametki_Bal_Kuz.recurringTransactions.resources
+C:\Users\Windows 10 Pro\Desktop\notes\obj\Debug\Zametki_Bal_Kuz.RegistrationForm.resources
+C:\Users\Windows 10 Pro\Desktop\notes\obj\Debug\Zametki_Bal_Kuz.spisok.resources
+C:\Users\Windows 10 Pro\Desktop\notes\obj\Debug\Zametki_Bal_Kuz.addNote.resources
+C:\Users\Windows 10 Pro\Desktop\notes\obj\Debug\Zametki_Bal_Kuz.editNoteForm.resources
+C:\Users\Windows 10 Pro\Desktop\notes\obj\Debug\Notes.csproj.GenerateResource.cache
+C:\Users\Windows 10 Pro\Desktop\notes\obj\Debug\Notes.csproj.CoreCompileInputs.cache
+C:\Users\Windows 10 Pro\Desktop\notes\obj\Debug\Notes.csproj.CopyComplete
+C:\Users\Windows 10 Pro\Desktop\notes\obj\Debug\Zametki_Bal_Kuz.exe
+C:\Users\Windows 10 Pro\Desktop\notes\obj\Debug\Zametki_Bal_Kuz.pdb
