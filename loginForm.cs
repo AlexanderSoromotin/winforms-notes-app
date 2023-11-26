@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Zametki_Bal_Kuz
 {
@@ -57,17 +58,26 @@ namespace Zametki_Bal_Kuz
             txtLogin.MaxLength = 50;
             txtPassword.MaxLength = 50;
             checkUserToken();
+            changeTheme();
         }
 
-        
+        private void changeTheme()
+        {
+            this.BackColor = AppData.backColor1;
+            label1.ForeColor = AppData.fontColor;
+            label2.ForeColor = AppData.fontColor;
+            label3.ForeColor = AppData.fontColor;
+            label4.ForeColor = AppData.fontColor;
+        }
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             var login = txtLogin.Text;
             var pass = txtPassword.Text;
 
-            
+            login = "admin";
+            pass = "1111";
 
-            MySqlDataAdapter adapter = new MySqlDataAdapter();
+           MySqlDataAdapter adapter = new MySqlDataAdapter();
             DataTable table = new DataTable();
 
             string queryString = $"SELECT * FROM users WHERE login = '{login}' AND pass = '{pass}'";

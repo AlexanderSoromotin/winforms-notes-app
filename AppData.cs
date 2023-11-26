@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,37 @@ namespace Zametki_Bal_Kuz
         public static string user_name;
         public static string user_token;
 
+        public static Color fontColor = HexToColor("#ffffff");
+        public static Color backColor1 = HexToColor("#505e82");
+        public static Color backColor2 = HexToColor("#303f56");
+
+        public static string selectedTheme = "dark";
+       
+        public static void changeTheme()
+        {
+            if (selectedTheme == "dark") 
+            {
+                selectedTheme = "light";
+                fontColor = HexToColor("#000");
+                backColor1 = HexToColor("#ffffff");
+                backColor2 = HexToColor("#eeeff2");
+
+                return;
+            }
+            selectedTheme = "dark";
+            fontColor = HexToColor("#ffffff");
+            backColor1 = HexToColor("#505e82");
+            backColor2 = HexToColor("#303f56");
+        }
+        static Color HexToColor(string hex)
+        {
+            hex = hex.TrimStart('#'); // Удаление символа # (если он есть)
+
+            int rgb = Convert.ToInt32(hex, 16); // Преобразование HEX в число
+            Color color = Color.FromArgb((rgb >> 16) & 0xFF, (rgb >> 8) & 0xFF, rgb & 0xFF); // Разбор числа на компоненты R, G, B
+
+            return color;
+        }
         // Токен пользователя - это ключ к аккаунту
         // Если имеется ключ (токен), то мы можем впустить пользователя без ввода логина и пароля
 
@@ -47,5 +79,6 @@ namespace Zametki_Bal_Kuz
 
             return "Ошибка";
         }
+
     }
 }

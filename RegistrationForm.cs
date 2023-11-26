@@ -88,5 +88,17 @@ namespace Zametki_Bal_Kuz {
             LoginForm.Show();
             Hide();
         }
+        private void changeTheme()
+        {
+            this.BackColor = AppData.backColor1;
+            label1.ForeColor = AppData.fontColor;
+            label2.ForeColor = AppData.fontColor;
+            label3.ForeColor = AppData.fontColor;
+            label4.ForeColor = AppData.fontColor;
+        }
+        private void RegistrationForm_Load(object sender, EventArgs e)
+        {
+            changeTheme();
+        }
     }
 }

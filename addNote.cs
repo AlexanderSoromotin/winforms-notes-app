@@ -12,6 +12,7 @@ using System.Diagnostics;
 using System.Xml.Linq;
 using System.IO;
 using MySql.Data.MySqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Zametki_Bal_Kuz
 {
@@ -41,7 +42,7 @@ namespace Zametki_Bal_Kuz
        
         private void zametka_Load(object sender, EventArgs e)
         {
-        
+            changeTheme();
         }
         private void pictureBox_Back_Click(object sender, EventArgs e)
         {
@@ -312,12 +313,27 @@ namespace Zametki_Bal_Kuz
 
         }
 
+        private void pictureBox_help_Click(object sender, EventArgs e)
+        {
+            helpForm helpForm = new helpForm("addNote");
+            helpForm.Show();
+        }
+
         private void button12_Click(object sender, EventArgs e) //проценты
         {
             float percentage = float.Parse(textBox1.Text) / 100;
             textBox1.Text = percentage.ToString();
         }
+        private void changeTheme()
+        {
+            this.BackColor = AppData.backColor1;
+            panel2.BackColor = AppData.backColor2;
+            label1.ForeColor = AppData.fontColor;
+            isEventCheckBox.ForeColor = AppData.fontColor;
+            label_name.ForeColor = AppData.fontColor;
+            button_save.ForeColor = AppData.fontColor;
+            button_save.BackColor = AppData.backColor2;
+        }
 
-       
     }
 }
